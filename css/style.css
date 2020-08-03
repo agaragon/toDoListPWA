@@ -1,0 +1,178 @@
+body {
+  font-family: sans-serif;
+}
+
+/* Make content area fill the entire browser window */
+html,
+.fullscreen {
+  /* display: flex; */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Center the content in the browser window */
+.container {
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* To do list wrapper */
+.to-do-list-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px;
+}
+/* Table */
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+}
+.to-do-list input {
+  border: none;
+  min-width: 180px;
+  width: 80%;
+}
+.to-do-list button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.to-do-list button:hover {
+  cursor: pointer;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Task remover */
+#to-do-list-task-remover {
+  display: flex;
+  flex-direction: column;
+}
+#to-do-list-task-remover form {
+  flex: row;
+  justify-content: center;
+}
+
+/* Header */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  list-style: none;
+}
+header {
+  background-image: linear-gradient(180deg, #00af7d, #6dbf67);
+}
+
+header div .left a img {
+  height: 32px;
+}
+#navbar {
+  margin: 0 15% 0 15%;
+}
+#navbar .top {
+  display: flex;
+  justify-content: space-between;
+}
+#navbar .left,
+#navbar .right {
+  display: flex;
+  align-items: center;
+}
+#navbar .right a,
+#navbar .left a {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  opacity: 0.95;
+}
+#navbar .right button {
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: none;
+  background: #fff;
+}
+#navbar .right button:hover {
+  cursor: pointer;
+}
+#navbar .top button {
+  justify-self: flex-end;
+  color: rgb(0, 175, 125);
+  font-size: 12px;
+}
+nav {
+  display: flex;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  padding: 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.95;
+  font-size: 14px;
+}
+#navbar a:hover {
+  opacity: 0.8;
+}
+.vertical-bar {
+  background-color: white;
+  width: 1px;
+  height: 50%;
+  opacity: 0.3;
+}
+.horizontal-line {
+  width: 100%;
+  background-color: white;
+  height: 1px;
+  opacity: 0.3;
+}
+
+@media (max-width: 600px) {
+  .fullscreen {
+    flex-direction: column;
+  }
+  nav ul {
+    display: none;
+  }
+  #need-what {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .fullscreen {
+    flex-direction: column;
+  }
+  nav ul {
+    display: none;
+  }
+  #need-what {
+    display: none;
+  }
+}

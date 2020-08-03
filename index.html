@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/hello-icon-152.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Hello World" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="img/hello-icon-144.png" />
+
+    <script src="js/controler.js" defer></script>
+    <script src="js/model.js" defer></script>
+    <script src="js/view.js" defer></script>
+    <script src="js/tests.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="fullscreen">
+    <header>
+      <div id="navbar" class="navbar">
+        <div class="top">
+          <div class="left">
+            <a href="#">
+              <img src="img/serasa-logo.svg" alt="" />
+            </a>
+            <div class="vertical-bar"></div>
+            <a href="#">
+              <img
+                src="https://www.serasa.com.br/lno/static-webfiles/common/products/ecred-white.svg"
+                alt="Serasa eCred"
+              />
+            </a>
+          </div>
+          <div class="right">
+            <div class="vertical-bar"></div>
+
+            <a href="" id="need-what"
+              >O que você precisa?
+              <img src="img/down-arrow.svg" class="down-arrow" alt=""
+            /></a>
+            <div class="vertical-bar"></div>
+            <button class="btn btn-primary">ENTRAR</button>
+          </div>
+        </div>
+        <div class="horizontal-line"></div>
+        <nav>
+          <ul>
+            <li><a href="">Como funciona</a></li>
+            <li>
+              <a href=""
+                >Empréstimo
+                <img src="img/down-arrow.svg" class="down-arrow" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                >Cartão <img src="img/down-arrow.svg" class="down-arrow" alt=""
+              /></a>
+            </li>
+            <li><a href="">Parceiros</a></li>
+            <li><a href="">O eCred</a></li>
+            <li>
+              <a href=""
+                >Ajuda <img src="img/down-arrow.svg" class="down-arrow" alt=""
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="to-do-list-wrapper">
+        <div id="to-do-list-container" class="flex-container">
+          <table id="to-do-list" class="to-do-list" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th>Tarefa</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <td></td>
+              <td>
+                <input type="text" placeholder="O que você tem que fazer?" />
+              </td>
+              <td><button class="btn-add-task">Adicionar</button></td>
+            </tfoot>
+          </table>
+        </div>
+        <div id="to-do-list-task-remover" style="display: none;">
+          <h2>Escolha qual tarefa você quer remover</h2>
+          <form>
+            <label for="task-index">Indique a tarefa</label>
+            <input
+              type="text"
+              name="task-index"
+              placeholder="Indique o index da tarefa"
+            />
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
