@@ -85,12 +85,14 @@ const removeTaskRow = (event) => {
   dbRequest.onsuccess = (event) => {
     let data = event.target.result;
 
-    for (i = 0; i < data.length; i++) {
-      if (data[i]["id"] == taskId) {
+    for (task in data) {
+      console.log(task);
+      if (data[task]["id"] == taskId) {
         dbRequest = db
           .transaction("Tasks", "readwrite")
           .objectStore("Tasks")
-          .delete(data[i]["id"]);
+          .delete(data[task]["id"]);
+        console.log(taskId);
       }
     }
   };
