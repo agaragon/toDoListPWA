@@ -62,7 +62,8 @@ const startReadonlyTransactionOnDBWithObjStore = (db, objStoreName) => {
  */
 dbRequest.onupgradeneeded = function (event) {
   db = event.target.result;
-  const objStore = db.createObjectStore("Tasks", { autoIncrement: true });
+  // const objStore = db.createObjectStore("Tasks", { autoIncrement: true });
+  const objStore = db.createObjectStore("Tasks", { keyPath: "id" });
   objStore.transaction.oncomplete = function (event) {
     const tasksStore = db
       .transaction("Tasks", "readwrite")

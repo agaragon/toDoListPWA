@@ -66,8 +66,34 @@ const createRow = (task, tableBody) => {
   let tdIndex = createCell(getNumberOfTasks(tableBody) + 1);
   let tdDescription = createCell(task);
   let tdStatus = createCell("Bloqueada");
-  addCellsToRow(trow, [tdIndex, tdDescription, tdStatus]);
+  let tdRmvTask = createCell("Remover");
+  tdRmvTask.addEventListener("click", (event) => {
+    removeTaskRow(event);
+  });
+  addCellsToRow(trow, [tdIndex, tdDescription, tdStatus, tdRmvTask]);
   return trow;
+};
+let a;
+const removeTaskRow = (event) => {
+  event.target.parentElement.remove();
+  let taskId = parseInt(event.target.parentElement.children[0].textContent);
+  // let transaction = db.t
+  let dbRequest = db
+    .transaction("Tasks", "readwrite")
+    .objectStore("Tasks")
+    .getAll();
+  dbRequest.onsuccess = (event) => {
+    let data = event.target.result;
+
+    for (i = 0; i < data.length; i++) {
+      if (data[i]["id"] == taskId) {
+        dbRequest = db
+          .transaction("Tasks", "readwrite")
+          .objectStore("Tasks")
+          .delete(data[i]["id"]);
+      }
+    }
+  };
 };
 
 const addTaskToDB = (db, task) => {
@@ -77,6 +103,14 @@ const addTaskToDB = (db, task) => {
     description: task.description,
     status: task.status,
   });
+};
+
+const getTaskDescriptionCellFromRow = (tableRow) => {
+  let rowDescriptionCell = tableRow.children[1];
+};
+const getTaskDescriptionFromTableRow = (tableRow) => {
+  let taskDescription = getTaskDescriptionCellFromRow(tableRow).textContent;
+  return taskDescription;
 };
 
 // Adds a new row to the table
